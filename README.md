@@ -61,7 +61,7 @@ Voici ce que chaque colonne représente :
 
 - Version minimale ECH **8.18.2**
 
-- **Hot data** : 3 AZ × 4 Go RAM/AZ
+- **Hot data** : 3 AZ × 4 Go RAM/AZ (3 AZs car l'indice sera sur 3 shards primaires) 
 - **Machine learning nodes** : 2 AZ × 4 Go RAM/AZ
 - **Kibana** : 1 AZ × 2 Go RAM/AZ
 
