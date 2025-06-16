@@ -86,7 +86,7 @@ Depuis [Azure OpenAI](https://portal.azure.com/) :
 
 ### 3. Lancer une machine Debian 11 (VM)
 
-Prendre à minima 4Go RAM, 2 vCPUs, 80 Go Disk  
+Prendre à minima 4Go RAM, 4 vCPUs, 80 Go Disk  
 
 ---
 
