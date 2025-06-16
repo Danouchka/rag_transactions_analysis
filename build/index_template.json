@@ -1,0 +1,22 @@
+{
+  "index_patterns": [
+    "logs-transaction.service-*"
+  ],
+  "data_stream": {},
+  "priority": 500,
+  "template": {
+    "settings": {
+      "index.default_pipeline": "pipeline_transaction_service",
+      "index.lifecycle.name": "policy_ilm_transaction_service",
+      "index.number_of_replicas": 1,
+      "index.number_of_shards":3,
+      "index.mode":"logsdb"
+    }
+  },
+  "composed_of": [
+    "logs@mappings",
+    "logs@settings",
+    "ecs@mappings",
+    "transaction.service@mappings"
+  ]
+}

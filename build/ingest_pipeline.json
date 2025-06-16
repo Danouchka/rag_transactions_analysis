@@ -1,0 +1,85 @@
+{
+  "processors": [
+    {
+      "dissect": {
+        "field": "message",
+        "pattern": "%{timestamp},%{step},%{event.action},%{amount},%{source.account.id},%{source.account.balance.old},%{source.account.balance.new},%{destination.account.id},%{destination.account.balance.old},%{destination.account.balance.new},%{is_fraud},%{is_flagged_fraud},%{text}"
+      }
+    },
+    {
+      "date": {
+        "formats": [
+          "date_optional_time",
+          "strict_date_optional_time"
+        ],
+        "field": "timestamp",
+        "target_field": "@timestamp",
+        "timezone": "Europe/Paris"
+      }
+    },
+    {
+      "convert": {
+        "field": "amount",
+        "type": "float",
+        "ignore_missing": true
+      }
+    },
+    {
+      "convert": {
+        "field": "source.account.balance.old",
+        "type": "float",
+        "ignore_missing": true
+      }
+    },
+    {
+      "convert": {
+        "field": "source.account.balance.new",
+        "type": "float",
+        "ignore_missing": true
+      }
+    },
+    {
+      "convert": {
+        "field": "destination.account.balance.old",
+        "type": "float",
+        "ignore_missing": true
+      }
+    },
+    {
+      "convert": {
+        "field": "destination.account.balance.new",
+        "type": "float",
+        "ignore_missing": true
+      }
+    },
+    {
+	  "gsub": {
+        "field": "text",
+        "pattern": "\"",
+        "replacement": ""
+      }
+    },
+    {
+	  "gsub": {
+        "field": "text",
+        "pattern": "'",
+        "replacement": ""
+      }
+    },
+    {
+        "remove": {
+          "field": "timestamp"
+        }
+    },
+    {
+        "inference":{
+            "model_id":".multilingual-e5-small-elasticsearch",
+            "input_output": {
+                "input_field":"text",
+                "output_field":"text_embeddings_e5"
+            },
+            "ignore_failure": true
+        }
+    }
+  ]
+}

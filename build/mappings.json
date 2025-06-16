@@ -1,0 +1,71 @@
+{
+  "template": {
+    "mappings": {
+      "properties": {
+        "step": {
+          "type": "long"
+        },
+        "is_fraud": {"type":"short"},
+        "is_flagged_fraud":  {"type":"short"},
+        "amount": {
+          "type": "float"
+        },
+        "text_embeddings_e5": {
+          "type": "dense_vector",
+          "dims": 384,
+          "index": true,
+          "similarity": "cosine",
+          "index_options": {
+            "type": "bbq_hnsw"
+          }
+        },
+        "source": {
+          "properties": {
+            "account": {
+              "properties": {
+                "id": {
+                  "type": "keyword"
+                },
+                "balance": {
+                  "properties": {
+                    "old": {
+                      "type": "float"
+                    },
+                    "new": {
+                      "type": "float"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "destination": {
+          "properties": {
+            "account": {
+              "properties": {
+                "id": {
+                  "type": "keyword"
+                },
+                "balance": {
+                  "properties": {
+                    "old": {
+                      "type": "float"
+                    },
+                    "new": {
+                      "type": "float"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "text": {
+          "type": "text",
+          "analyzer": "french"
+        }
+      }
+    }
+  }
+}
