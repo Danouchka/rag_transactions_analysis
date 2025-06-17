@@ -11,7 +11,7 @@ Il s’appuie sur
 ## 💳 Nature du dataset exploité
 
 ### Types de transactions expliqués
-Voici un résumé simple de chaque type de transaction, comme tu l’as décrit :
+Voici un résumé simple de chaque type de transaction:
 
 CASH-IN
 ➤ Quand un utilisateur dépose de l’argent sur son compte mobile via un commerçant (agent).
@@ -194,4 +194,4 @@ Poser les questions suivantes dans cet ordre:
 4. Qu'ont acheté tous ces destinataires ? 
 5. Peux-tu générer le graphe ascii détaillé de toutes ces transactions depuis C0000001344 ? 
 
-![Demo Example](./demo_screenshot.png)
+<div style="border: 2px solid black;">![Demo Example](./demo_screenshot.png)</div>
