@@ -1,7 +1,11 @@
 💸 Transactions AI – Analyse Générative des Transactions
 
 Ce projet déploie une plateforme d’analyse de transactions enrichie par des vecteurs, des embeddings et une interface utilisateur. 
-Il s’appuie sur **Elastic Cloud** pour l’indexation et la recherche, et sur **Azure OpenAI** pour les capacités d’IA générative (GPT-4o).
+Il s’appuie sur 
+ *  **Elastic Cloud** pour l’indexation et la recherche sémantique
+    * recherche vectorielle avec le model built-in .rerank-v1-elasticsearch
+    * reranking sémantique  avec le model built-in .multilingual-e5-small-elasticsearch  
+ *  et sur **Azure OpenAI** pour les capacités d’IA générative (GPT-4o).
 
 ---
 ## 💳 Nature du dataset exploité
