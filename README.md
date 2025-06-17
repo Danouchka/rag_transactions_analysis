@@ -194,4 +194,4 @@ Poser les questions suivantes dans cet ordre:
 4. Qu'ont acheté tous ces destinataires ? 
 5. Peux-tu générer le graphe ascii détaillé de toutes ces transactions depuis C0000001344 ? 
 
-<div style="border: 2px solid black;">![Demo Example](./demo_screenshot.png)</div>
+![Demo Example](./demo_screenshot.png)
